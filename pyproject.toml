@@ -14,6 +14,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.10"
 Django = "^5"
+django-environ = "^0.11.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
@@ -23,6 +24,7 @@ mypy = "^1.8.0"
 bandit = "^1.7.7"
 docformatter = "^1.7.5"
 ruff = "^0.2.0"
+pre-commit = "^3.6.0"
 
 [tool.poetry.scripts]
 django-blog = "django_blog.__main__:main"
