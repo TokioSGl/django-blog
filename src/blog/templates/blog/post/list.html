@@ -18,4 +18,5 @@
       <footer class="post__meta">Published {{ post.published }} by {{ post.author }}</footer>
     </article>
   {% endfor %}
+  {% include "blog/post/pagination.html" with page=page_obj %}
 {% endblock %}
