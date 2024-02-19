@@ -17,5 +17,6 @@
         {% csrf_token %}
 
         <button class="btn btn-outline btn-primary" type="submit">Log in</button>
+        <a href="{% url 'account:signup' %}" class="btn btn-outline btn-secondary">Sign Up</a>
     </form>
 {% endblock %}
