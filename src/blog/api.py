@@ -25,17 +25,23 @@ class CommentIn(Schema):
     body: str
 
 
+class UserOut(Schema):
+    id: int
+    username: str
+
+
 class CommentOut(Schema):
     post_id: int
-    user_id: int
     body: str
     created: datetime
+    user: UserOut
 
 
 @router.get("/comments/{post_id}", response=list[CommentOut])
 def comment_list(request, post_id: int):
     post = Post.objects.get(id=post_id)
-    return post.comments
+    comments = post.comments.select_related("user")
+    return comments
 
 
 @router.post("/comments/", response=CommentOut)
